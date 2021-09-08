@@ -18,6 +18,11 @@ RUN apk add --update --no-cache \
 	supervisor	
 RUN mkdir -p /var/log/supervisor
 
+#create symlink
+RUN mkdir -p /app/data/storage
+RUN ln -s /app/data/storage /app/storage
+RUN touch /tmp/supervisord.log
+
 # add supervisor configs
 ADD supervisor/* /etc/supervisor/conf.d/
 ADD supervisord.conf /etc/supervisor/
