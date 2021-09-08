@@ -18,8 +18,12 @@ RUN apk add --update --no-cache \
 	supervisor	
 RUN mkdir -p /var/log/supervisor
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+# add supervisor configs
+ADD supervisor/* /etc/supervisor/conf.d/
 
+ADD start.sh /app/start.sh
 WORKDIR /app
-CMD ["/usr/bin/supervisord"]
+
+CMD [ "/app/start.sh" ]
+
 EXPOSE 3000
