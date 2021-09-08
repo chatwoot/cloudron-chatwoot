@@ -4,7 +4,9 @@
   "healthCheckPath": "/",
   "httpPort": 3000,
   "addons": {
-    "localstorage": {}
+    "localstorage": {},
+    "postgresql": {},
+    "redis": {}
   },
   "manifestVersion": 2
 }
