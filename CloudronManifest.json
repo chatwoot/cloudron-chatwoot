@@ -1,5 +1,6 @@
 {
   "version": "0.1.0",
+  "id": "com.github.chatwoot",
   "healthCheckPath": "/",
   "httpPort": 3000,
   "addons": {
