@@ -2,9 +2,16 @@
 
 set -x
 
-sed -e "s#REDIS_URL#redis://user:${CLODURON_REDIS_PASSWORD}@${CLODURON_REDIS_HOST}:${CLODURON_REDIS_PORT}#" \
-    -e "s#REDIS_PASSWORD#${CLODURON_REDIS_PASSWORD}#" \
-    /app/config/cable.yaml
+# sed -e "s#REDIS_URL#redis://user:${CLOUDRON_REDIS_PASSWORD}@${CLOUDRON_REDIS_HOST}:${CLOUDRON_REDIS_PORT}#" \
+#     -e "s#REDIS_PASSWORD#${CLOUDRON_REDIS_PASSWORD}#" \
+#     -i /app/config/cable.yml
+
+# sed -e "s/POSTGRES_DATABASE/${CLOUDRON_POSTGRESQL_DATABASE}/" \
+#     -e "s/POSTGRES_USERNAME/${CLOUDRON_POSTGRESQL_USERNAME}/" \
+#     -e "s/POSTGRES_PASSWORD/${CLOUDRON_POSTGRESQL_PASSWORD}/" \
+#     -e "s/POSTGRES_HOST/${CLOUDRON_POSTGRESQL_HOST}/" \
+#     -e "s/POSTGRES_PORT/${CLOUDRON_POSTGRESQL_PORT}/" \
+#     -i /app/config/database.yml
 
 
 echo "==> Starting supervisor"
