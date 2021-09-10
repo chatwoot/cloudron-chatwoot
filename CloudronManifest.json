@@ -9,5 +9,6 @@
     "redis": {}
   },
   "memoryLimit": 3221225472,
+  "icon": "file://logo.png",
   "manifestVersion": 2
 }
