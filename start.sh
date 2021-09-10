@@ -13,6 +13,22 @@ set -x
 #     -e "s/POSTGRES_PORT/${CLOUDRON_POSTGRESQL_PORT}/" \
 #     -i /app/config/database.yml
 
+# Remove a potentially pre-existing server.pid for Rails.
+rm -rf /app/tmp/pids/server.pid
+rm -rf /app/tmp/cache/*
+
+echo "Waiting for postgres to become ready...."
+
+PG_READY="pg_isready -h $CLOUDRON_POSTGRESQL_HOST -p $CLOUDRON_POSTGRESQL_PORT"
+
+until $PG_READY
+do
+  sleep 2;
+done
+
+echo "Database ready to accept connections."
+
+
 if [[ ! -f "/app/data/.dbsetup" ]]; then
     echo "==> Initializing db"
     bundle exec rails db:chatwoot_prepare RAILS_ENV=production
@@ -22,6 +38,14 @@ else
     bundle exec rails db:chatwoot_prepare RAILS_ENV=production
 fi
 
+# bundle install
+
+BUNDLE="bundle check"
+
+until $BUNDLE
+do
+  sleep 2;
+done
 
 echo "==> Starting supervisor"
 exec /usr/bin/supervisord --configuration /etc/supervisor/supervisord.conf
