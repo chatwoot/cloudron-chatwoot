@@ -13,6 +13,15 @@ set -x
 #     -e "s/POSTGRES_PORT/${CLOUDRON_POSTGRESQL_PORT}/" \
 #     -i /app/config/database.yml
 
+if [[ ! -f "/app/data/.dbsetup" ]]; then
+    echo "==> Initializing db"
+    bundle exec rails db:chatwoot_prepare RAILS_ENV=production
+    touch /app/data/.dbsetup
+else
+    echo "==> Upgrading existing db"
+    bundle exec rails db:chatwoot_prepare RAILS_ENV=production
+fi
+
 
 echo "==> Starting supervisor"
 exec /usr/bin/supervisord --configuration /etc/supervisor/supervisord.conf
