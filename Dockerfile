@@ -18,6 +18,8 @@ RUN apk add --update --no-cache \
 	supervisor	
 RUN mkdir -p /var/log/supervisor
 
+ADD .env /app
+
 #create symlink
 RUN mkdir -p /app/data/storage
 RUN ln -s /app/data/storage /app/storage
