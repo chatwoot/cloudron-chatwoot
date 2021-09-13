@@ -28,6 +28,7 @@ done
 
 echo "Database ready to accept connections."
 
+cp /app/.env.example /app/data/.env
 
 if [[ ! -f "/app/data/.dbsetup" ]]; then
     echo "==> Initializing db"
