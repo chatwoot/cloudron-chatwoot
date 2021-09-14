@@ -1,6 +1,13 @@
 {
-  "version": "0.2.0",
   "id": "com.github.chatwoot",
+  "version": "0.2.0",
+  "title": "Chatwoot",
+  "author": "Chatwoot",
+  "description": "file://DESCRIPTION.md",
+  "tagline": "Open-source customer engagement suite, an alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬 ",
+  "website": "https://chatwoot.com/",
+  "contactEmail": "support@cloudron.io",
+  "tags": [ "rails", "zendesk", "vuejs", "opensource", "customer support", "conversation", "whatsapp", "intercom", "livechat", "drift", "chat-widget", "chatwoot", "crm" ],
   "healthCheckPath": "/",
   "httpPort": 3000,
   "addons": {
@@ -10,5 +17,8 @@
   },
   "memoryLimit": 3221225472,
   "icon": "file://logo.png",
-  "manifestVersion": 2
+  "manifestVersion": 2,
+  "changelog": "file://CHANGELOG",
+  "postInstallMessage": "file://POSTINSTALL.md",
+  "documentationUrl": "https://docs.cloudron.io/apps/chatwoot/"
 }
