@@ -4,7 +4,7 @@
   "title": "Chatwoot",
   "author": "Chatwoot",
   "description": "file://DESCRIPTION.md",
-  "tagline": "Open-source customer engagement suite, an alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬 ",
+  "tagline": "Open-source customer engagement suite, an alternative to Intercom, Zendesk, Salesforce Service Cloud etc. ",
   "website": "https://chatwoot.com/",
   "contactEmail": "support@cloudron.io",
   "tags": [ "rails", "zendesk", "vuejs", "opensource", "customer support", "conversation", "whatsapp", "intercom", "livechat", "drift", "chat-widget", "chatwoot", "crm" ],
