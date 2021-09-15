@@ -28,7 +28,12 @@ done
 
 echo "Database ready to accept connections."
 
-cp /app/.env.example /app/data/.env
+if [[ ! -f "/app/data/.env" ]]; then
+  echo "Creating .env file at /app/data/.env"
+  cp /app/.env.example /app/data/.env
+else
+  echo "Skipping .env file creation. /app/data/.env exists."
+fi
 
 if [[ ! -f "/app/data/.dbsetup" ]]; then
     echo "==> Initializing db"
